@@ -1,0 +1,10 @@
+package com.sportradar.football_calendar.repository;
+
+import com.sportradar.football_calendar.model.Stage;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface StageRepository extends JpaRepository<Stage, Integer> {
+ 
+}
