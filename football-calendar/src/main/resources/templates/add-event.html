@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj Mecz</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+    <div class="form-wrapper">
+        <h1>🆕 Dodaj Nowe Wydarzenie</h1>
+
+        <form th:action="@{/events/save}" th:object="${event}" method="post" class="sport-form">
+            
+            <div class="form-group">
+                <label>Gospodarz (Home Team):</label>
+                <select th:field="*{homeTeam}" required>
+                    <option value="" disabled selected>Wybierz drużynę...</option>
+                    <option th:each="t : ${teams}" th:value="${t.id}" th:text="${t.name}"></option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Gość (Away Team):</label>
+                <select th:field="*{awayTeam}" required>
+                    <option value="" disabled selected>Wybierz drużynę...</option>
+                    <option th:each="t : ${teams}" th:value="${t.id}" th:text="${t.name}"></option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Etap (Stage):</label>
+                <select th:field="*{stage}">
+                    <option value="" disabled selected>Wybierz etap...</option>
+                    <option th:each="s : ${stages}" th:value="${s.id}" th:text="${s.name}"></option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Grupa (Group):</label>
+                <select th:field="*{group}">
+                    <option value="" disabled selected>Wybierz grupę...</option>
+                    <option th:each="g : ${groups}" th:value="${g.id}" th:text="${g.name}"></option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Wynik (Result):</label>
+                <select th:field="*{result}">
+                    <option value="">Brak (Mecz nadchodzący)</option>
+                    <option th:each="r : ${results}" th:value="${r.id}" th:text="${r.homeGoals + ':' + r.awayGoals}"></option>
+                </select>
+            </div>
+
+            <div class="actions">
+                <button type="submit" class="btn btn-add">Zapisz mecz</button>
+                <a href="/events" class="btn btn-back">Anuluj</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -2,6 +2,9 @@ package com.sportradar.football_calendar.controller;
 
 import com.sportradar.football_calendar.model.Events;
 import com.sportradar.football_calendar.repository.EventsRepository;
+import com.sportradar.football_calendar.repository.GroupRepository;
+import com.sportradar.football_calendar.repository.ResultRepository;
+import com.sportradar.football_calendar.repository.StageRepository;
 import com.sportradar.football_calendar.repository.TeamsRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,9 +17,18 @@ public class EventsController {
 
     private final EventsRepository eventRepository;
     private final TeamsRepository teamsRepository;
-    public EventsController(EventsRepository eventRepository, TeamsRepository teamsRepository) {
+    private final GroupRepository groupRepository;
+    private final StageRepository stageRepository;
+    private final ResultRepository resultRepository;
+    public EventsController(EventsRepository eventRepository, TeamsRepository teamsRepository,
+            GroupRepository groupRepository, StageRepository stageRepository,
+            ResultRepository resultRepository
+            ) {
         this.eventRepository = eventRepository;
         this.teamsRepository = teamsRepository;
+        this.groupRepository = groupRepository;
+        this.stageRepository = stageRepository;
+        this.resultRepository = resultRepository;
     }
 
     @GetMapping("/events") 
@@ -29,9 +41,12 @@ public class EventsController {
     
     @GetMapping("/events/add")
     public String showAddForm(Model model) {
-    model.addAttribute("event", new Events()); // Przekazujemy pusty obiekt do wypełnienia
-    model.addAttribute("teams", teamsRepository.findAll()); // Lista drużyn do wyboru w <select>
-    return "add-event"; // Nazwa pliku HTML
+    model.addAttribute("event", new Events());
+    model.addAttribute("teams", teamsRepository.findAll());
+    model.addAttribute("result", resultRepository.findAll());
+    model.addAttribute("stages", stageRepository.findAll());
+    model.addAttribute("groups", groupRepository.findAll());
+    return "add-event"; 
 }
     @PostMapping("/events/save")
     public String saveEvent(@ModelAttribute("event") Events event) {

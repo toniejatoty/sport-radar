@@ -2,7 +2,7 @@ package com.sportradar.football_calendar.model;
 import jakarta.persistence.*;
 
 @Entity 
-@Table(name = "group") 
+@Table(name = "[group]") 
 public class Group {
 
     @Id 
