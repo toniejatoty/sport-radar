@@ -1,5 +1,10 @@
-/*create database sportradar
+/*
+
+CREATE LOGIN sportradar_user WITH PASSWORD = 'TwojeHaslo123!';
+create database sportradar
 use sportradar
+CREATE USER sportradar_user FOR LOGIN sportradar_user;
+ALTER ROLE db_owner ADD MEMBER sportradar_user;
 */
 CREATE TABLE Teams (
     id INT PRIMARY KEY IDENTITY(1,1),
