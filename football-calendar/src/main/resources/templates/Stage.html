@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>List of stages</title>
+    </head>
+    <body>
+        <h1>All stages</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name of stage</th>
+                    <th>Ordering</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="t : ${stage}">
+                    <td th:text="${t.id}"></td>
+                    <td th:text="${t.name}"></td>
+                    <td th:text="${t.ordering}"></td>
+
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <a href="/stage/add">Add new stage</a>
+    </body>
+</html>

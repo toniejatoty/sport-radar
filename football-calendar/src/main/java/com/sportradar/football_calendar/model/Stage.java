@@ -6,9 +6,32 @@ import jakarta.persistence.*;
 public class Stage {
 
     @Id 
-    @GeneratedValue(strategy = GenerationType.IDENTITY) 
-    private Integer id;
+    private String id;
     private String name;
     private Integer ordering;
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getOrdering() {
+        return ordering;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setOrdering(Integer ordering) {
+        this.ordering = ordering;
+    }
     
             }

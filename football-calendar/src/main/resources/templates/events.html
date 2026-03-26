@@ -1,51 +1,53 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Kalendarz Wydarzeń</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Kalendarz Wydarzeń</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+    </head>
+    <body>
 
-    <h1>📅 Kalendarz Rozgrywek</h1>
-    
-    <div class="nav">
-        <a href="/teams" class="btn">Lista Drużyn</a>
-        <a href="/groups">Zobaczy grupy</a>
-    </div>
+        <h1>📅 Kalendarz Rozgrywek</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Mecz (Gospodarz vs Gość)</th>
-                <th>Etap (Stage)</th>
-                <th>Grupa</th>
-                <th>Wynik</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="event : ${matches}">
-                <td th:text="${event.id}"></td>
-                
-                <td>
-                    <span class="team-name" th:text="${event.homeTeam != null ? event.homeTeam.name : 'NONE'}"></span>
-                    <span class="vs">vs</span>
-                    <span class="team-name" th:text="${event.awayTeam != null ? event.awayTeam.name : 'NONE'}"></span>
-                </td>
+        <div class="nav">
+            <a href="/teams" class="btn">Lista Drużyn</a>
+            <a href="/groups">Zobaczy grupy</a>
+            <a href="/stage">Show Stages</a>
+            <a href="/events/add">Dodaj Event</a>
+        </div>
 
-                <td th:text="${event.stage != null ? event.stage.name : '-'}"></td>
-                
-                <td th:text="${event.group != null ? event.group.name : '-'}"></td>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Mecz (Gospodarz vs Gość)</th>
+                    <th>Etap (Stage)</th>
+                    <th>Grupa</th>
+                    <th>Wynik</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="event : ${matches}">
+                    <td th:text="${event.id}"></td>
 
-                <td class="score">
-                    <span th:if="${event.result != null}" 
-                          th:text="${event.result.homeScore + ' : ' + event.result.awayScore}"></span>
-                    <span th:unless="${event.result != null}">Nadchodzący</span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    <td>
+                        <span class="team-name" th:text="${event.homeTeam != null ? event.homeTeam.name : 'NONE'}"></span>
+                        <span class="vs">vs</span>
+                        <span class="team-name" th:text="${event.awayTeam != null ? event.awayTeam.name : 'NONE'}"></span>
+                    </td>
 
-</body>
+                    <td th:text="${event.stage != null ? event.stage.name : '-'}"></td>
+
+                    <td th:text="${event.group != null ? event.group.name : '-'}"></td>
+
+                    <td class="score">
+                        <span th:if="${event.result != null}" 
+                              th:text="${event.result.homeScore + ' : ' + event.result.awayScore}"></span>
+                        <span th:unless="${event.result != null}">Nadchodzący</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
 </html>
