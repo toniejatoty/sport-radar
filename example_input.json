@@ -1,0 +1,43 @@
+[
+    {
+        "season": 2024,
+        "status": "played",
+        "timeVenueUTC": "00:00:00",
+        "dateVenue": "2024-01-03",
+        "stadium": null,
+        "homeTeam": {
+            "name": "Al Shabab",
+            "officialName": "Al Shabab FC",
+            "slug": "al-shabab-fc",
+            "abbreviation": "SHA",
+            "teamCountryCode": "KSA",
+            "stagePosition": null
+        },
+        "awayTeam": {
+            "name": "Nasaf",
+            "officialName": "FC Nasaf",
+            "slug": "fc-nasaf-qarshi",
+            "abbreviation": "NAS",
+            "teamCountryCode": "UZB",
+            "stagePosition": null
+        },
+        "result": {
+            "homeGoals": 1,
+            "awayGoals": 2,
+            "winner": "Nasaf",
+            "message": null,
+            "goals": [],
+            "yellowCards": [],
+            "secondYellowCards": [],
+            "directRedCards": [],
+        },
+        "stage": {
+            "id": "ROUND OF 16",
+            "name": "ROUND OF 16",
+            "ordering": 4
+        },
+        "group": null,
+        "originCompetitionId": "afc-champions-league",
+        "originCompetitionName": "AFC Champions League"
+    }
+]

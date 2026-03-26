@@ -10,13 +10,9 @@ public class Teams {
     private Integer id;
 
     private String name;
-    
     private String officialName;
-    
     private String slug;
-    
     private String abbreviation;
-    
     private String teamCountryCode;
     private Integer stagePosition;
     private String team_information; 

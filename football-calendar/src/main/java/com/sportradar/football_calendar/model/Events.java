@@ -10,7 +10,7 @@ public class Events {
     private Integer id;
     @ManyToOne 
     @JoinColumn(name = "_event_metadate_id") 
-    private Integer _event_metadate;
+    private Event_metadata _event_metadate;
     @ManyToOne 
     @JoinColumn(name = "_homeTeam_id") 
     private Teams _homeTeam;

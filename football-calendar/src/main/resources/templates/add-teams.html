@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dodaj Drużynę</title>
+</head>
+<body>
+    <h1>Dodaj nową drużynę</h1>
+    <form th:action="@{/events/save}" th:object="${team}" method="post">
+        <label>Nazwa drużyny:</label>
+        <input type="text" th:field="*{name}" placeholder="np. Real Madryt" required />
+        
+        <br>
+        <label>Skrót (Abbreviation):</label>
+        <input type="text" th:field="*{abbreviation}" placeholder="np. RMA" />
+        
+        <br>
+        <button type="submit">Zapisz drużynę</button>
+    </form>
+    <br>
+    <a href="/teams">Powrót do listy</a>
+</body>
+</html>

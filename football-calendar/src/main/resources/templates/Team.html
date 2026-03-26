@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista Drużyn</title>
+</head>
+<body>
+    <h1>Wszystkie Drużyny</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nazwa</th>
+                <th>Skrót</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="t : ${team}">
+                <td th:text="${t.id}">1</td>
+                <td th:text="${t.name}">Nazwa</td>
+                <td th:text="${t.abbreviation}">ABC</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <a href="/events/add">Dodaj nową drużynę</a>
+</body>
+</html>
