@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalendarz Wydarzeń</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .btn { padding: 10px 15px; background: #28a745; color: white; text-decoration: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1>📅 Kalendarz Meczy</h1>
+    
+    <div style="margin-bottom: 20px;">
+        <a href="/teams" class="btn">Zarządzaj Drużynami</a>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nazwa Wydarzenia</th>
+                <th>Data</th>
+                <th>Gospodarz</th>
+                <th>Gość</th>
+                <th>Typ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="event : ${matches}">
+                <td th:text="${event.id}">1</td>
+                <td th:text="${event.name}">Mecz Testowy</td>
+                <td th:text="${event.eventDate}">2026-03-26</td>
+                
+                <td th:text="${event.homeTeam != null ? event.homeTeam.name : 'N/A'}">Gospodarz</td>
+                <td th:text="${event.awayTeam != null ? event.awayTeam.name : 'N/A'}">Gość</td>
+                
+                <td th:text="${event.type}">mecz</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p th:if="${#lists.isEmpty(matches)}">Brak zaplanowanych wydarzeń w bazie.</p>
+
+</body>
+</html>

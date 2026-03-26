@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Lista Drużyn</title>
-</head>
-<body>
-    <h1>Wszystkie Drużyny</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nazwa</th>
-                <th>Skrót</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="t : ${team}">
-                <td th:text="${t.id}"></td>
-                <td th:text="${t.name}"></td>
-                <td th:text="${t.abbreviation}"></td>
-            </tr>
-        </tbody>
-    </table>
-    <br>
-    <a href="/teams/add">Dodaj nową drużynę</a>
-</body>
+    <head>
+        <title>Lista Drużyn</title>
+    </head>
+    <body>
+        <h1>Wszystkie Drużyny</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nazwa drużyny</th>
+                    <th>pełna nazwa drużyny</th>
+                    <th>slug</th>
+                    <th>Skrót</th>
+                    <th>TeamCountryCode</th>
+                    <th>StagePosition</th>
+                    <th>TeamInformation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="t : ${team}">
+                    <td th:text="${t.id}"></td>
+                    <td th:text="${t.name}"></td>
+                    <td th:text="${t.officialName}"></td>
+                    <td th:text="${t.slug}"></td>
+                    <td th:text="${t.abbreviation}"></td>
+                    <td th:text="${t.teamCountryCode}"></td>
+                    <td th:text="${t.stagePosition}"></td>
+                    <td th:text="${t.team_information}"></td>
+                    
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <a href="/teams/add">Dodaj nową drużynę</a>
+    </body>
 </html>
