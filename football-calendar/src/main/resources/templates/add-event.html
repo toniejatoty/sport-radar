@@ -2,12 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
-        <title>Dodaj Mecz</title>
+        <title>Add Match</title>
         <link rel="stylesheet" th:href="@{/css/style.css}">
     </head>
     <body>
 
-        <h1>🆕 Dodaj Nowe Wydarzenie</h1>
+        <h1>Add New Event</h1>
 
         <form th:action="@{/events/save}" th:object="${event}" method="post">
 
@@ -17,27 +17,27 @@
                 <option th:each="t : ${teams}" th:value="${t.id}" th:text="${t.name}"></option>
             </select>
             <br>
-            <label>Gość (Away Team):</label>
+            <label>Away team:</label>
             <select th:field="*{awayTeam}" required>
                 <option value="" disabled selected></option>
                 <option th:each="t : ${teams}" th:value="${t.id}" th:text="${t.name}"></option>
             </select>
             <br>
-            <label>Etap (Stage):</label>
+            <label>Stage:</label>
             <select th:field="*{stage}">
-                <option value="" disabled selected>Wybierz etap...</option>
+                <option value="" disabled selected></option>
                 <option th:each="s : ${stages}" th:value="${s.id}" th:text="${s.name}"></option>
             </select>
             <br>
-            <label>Grupa (Group):</label>
+            <label>Group:</label>
             <select th:field="*{group}">
-                <option value="" disabled selected>Wybierz grupę...</option>
+                <option value="" disabled selected>Select group...</option>
                 <option th:each="g : ${groups}" th:value="${g.id}" th:text="${g.name}"></option>
             </select>
             <br>
             <label>Result:</label>
             <select th:field="*{result}">
-                <option value="">Brak (Mecz nadchodzący)</option>
+                <option value="">None (Upcoming match)</option>
                 <option th:each="r : ${results}" th:value="${r.id}" th:text="${r.homeGoals + ':' + r.awayGoals}"></option>
             </select>
             <br>

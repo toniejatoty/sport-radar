@@ -25,15 +25,12 @@ public class DataImportService {
 
     public void importDataFromJson(String filePath) {
         try {
-            // Tu za chwilę napiszemy logikę czytania pliku
-            System.out.println("Zaczynam import z pliku: " + filePath);
-            
-            // 1. Wczytaj plik
-            // 2. Przerób na obiekty
-            // 3. Zapisz przez repozytoria
+
+            System.out.println("Starting import from file: " + filePath);
+
             
         } catch (Exception e) {
-            System.err.println("Błąd podczas importu: " + e.getMessage());
+            System.err.println("Import error: " + e.getMessage());
         }
     }
 }

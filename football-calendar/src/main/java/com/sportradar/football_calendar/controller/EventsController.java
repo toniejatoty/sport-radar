@@ -33,10 +33,10 @@ public class EventsController {
 
     @GetMapping("/events") 
     public String listEvents(Model model) {
-        // "model" to taki worek, do którego wrzucamy dane dla HTML-a
+
         model.addAttribute("matches", eventRepository.findAll());
         
-        return "events"; // To musi być nazwa pliku HTML (bez .html)
+        return "events"; 
     }
     
     @GetMapping("/events/add")
@@ -50,8 +50,8 @@ public class EventsController {
 }
     @PostMapping("/events/save")
     public String saveEvent(@ModelAttribute("event") Events event) {
-    eventRepository.save(event); // Zapisujemy to, co przyszło z formularza
-    return "redirect:/events"; // Po zapisie wracamy na listę meczów
+    eventRepository.save(event); 
+    return "redirect:/events"; 
 }
 
 

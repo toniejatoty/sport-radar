@@ -2,29 +2,29 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
-        <title>Kalendarz Wydarzeń</title>
+        <title>Event Calendar</title>
         <link rel="stylesheet" th:href="@{/css/style.css}">
     </head>
     <body>
 
-        <h1>📅 Kalendarz Rozgrywek</h1>
+        <h1>Competition Calendar</h1>
 
         <div class="nav">
-            <a href="/teams" class="btn">Lista Drużyn</a>
-            <a href="/groups">Zobaczy grupy</a>
+            <a href="/teams" >Team List</a>
+            <a href="/groups">View groups</a>
             <a href="/stage">Show Stages</a>
                         <a href="/results">Show results</a>
-            <a href="/events/add">Dodaj Event</a>
+            <a href="/events/add">Add Event</a>
         </div>
 
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Mecz (Gospodarz vs Gość)</th>
-                    <th>Etap (Stage)</th>
-                    <th>Grupa</th>
-                    <th>Wynik</th>
+                    <th>Match (Home vs Away)</th>
+                    <th>Stage</th>
+                    <th>Group</th>
+                    <th>Result</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,7 +44,7 @@
                     <td class="score">
                         <span th:if="${event.result != null}" 
                               th:text="${event.result.homeGoals + ' : ' + event.result.awayGoals}"></span>
-                        <span th:unless="${event.result != null}">Nadchodzący</span>
+                        <span th:unless="${event.result != null}">Upcoming</span>
                     </td>
                 </tr>
             </tbody>

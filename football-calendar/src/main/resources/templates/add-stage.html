@@ -6,7 +6,7 @@
 <body>
     <h1>Add new stage</h1>
     <form th:action="@{/stage/save}" th:object="${stage}" method="post">
-        <label>Nazwa Etapu</label>
+        <label>Stage name</label>
         <input type="text" th:field="*{id}" placeholder="ROUND OF 16" required />
         <br>
 

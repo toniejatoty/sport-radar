@@ -27,9 +27,9 @@ public class FootballCalendarApplication {
         return args -> {
             String path = "C:\\Users\\konra\\Desktop\\vscode\\sportradar\\sport-radar\\example_input.json"; 
             
-            System.out.println(">>> Rozpoczynam automatyczny import danych...");
+            System.out.println(">>> Starting automatic data import...");
             dataImportService.importDataFromJson(path);
-            System.out.println(">>> Import zakończony!");
+            System.out.println(">>> Import finished!");
         };
     }
 }
