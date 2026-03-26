@@ -13,6 +13,7 @@
             <a href="/teams" class="btn">Lista Drużyn</a>
             <a href="/groups">Zobaczy grupy</a>
             <a href="/stage">Show Stages</a>
+                        <a href="/results">Show results</a>
             <a href="/events/add">Dodaj Event</a>
         </div>
 
@@ -42,7 +43,7 @@
 
                     <td class="score">
                         <span th:if="${event.result != null}" 
-                              th:text="${event.result.homeScore + ' : ' + event.result.awayScore}"></span>
+                              th:text="${event.result.homeGoals + ' : ' + event.result.awayGoals}"></span>
                         <span th:unless="${event.result != null}">Nadchodzący</span>
                     </td>
                 </tr>

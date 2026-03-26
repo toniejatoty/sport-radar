@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>List of results</title>
+    </head>
+    <body>
+        <h1>All stages</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>homeGoals</th>
+                    <th>awayGoals</th>
+                    <th>winnerTeam</th>
+                    <th>message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="t : ${result}">
+                    <td th:text="${t.id}"></td>
+                   
+                    <td th:text="${t.homeGoals}"></td>
+                    <td th:text="${t.awayGoals}"></td>
+                    <td th:text="${t.winner.name}"></td>
+                    <td th:text="${t.message}"></td>
+
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <a href="/result/add">Add new result</a>
+    </body>
+</html>

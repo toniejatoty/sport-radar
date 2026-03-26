@@ -43,7 +43,7 @@ public class EventsController {
     public String showAddForm(Model model) {
     model.addAttribute("event", new Events());
     model.addAttribute("teams", teamsRepository.findAll());
-    model.addAttribute("result", resultRepository.findAll());
+    model.addAttribute("results", resultRepository.findAll());
     model.addAttribute("stages", stageRepository.findAll());
     model.addAttribute("groups", groupRepository.findAll());
     return "add-event"; 
