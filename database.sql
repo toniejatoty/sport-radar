@@ -10,7 +10,7 @@ CREATE TABLE Teams (
     id INT PRIMARY KEY IDENTITY(1,1),
     [name] NVARCHAR(100) NOT NULL,
     officialName nvarchar(256) not null,
-    slug as lower(replace(officialName,' ', '-')) persisted,
+    slug nvarchar(256) not null,
     abbreviation char(3) not null,
     teamCountryCode char(3) not null,
     stagePosition int null,
