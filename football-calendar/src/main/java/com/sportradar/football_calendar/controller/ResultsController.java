@@ -21,7 +21,7 @@ public class ResultsController {
 
     @GetMapping("/results") 
     public String listTeams(Model model) {
-        model.addAttribute("result", resultRepository.findAll());
+        model.addAttribute("result", resultRepository.findAllResults());
         return "Result"; 
     }
     

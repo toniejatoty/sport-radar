@@ -109,6 +109,9 @@ CREATE TABLE Events (
     constraint FK_group_events foreign key  (_group_id) references [group](id)
 
 );
+
+
+
 /*
 go
 drop table events
