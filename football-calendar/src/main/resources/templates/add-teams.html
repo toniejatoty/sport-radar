@@ -5,13 +5,36 @@
 </head>
 <body>
     <h1>Dodaj nową drużynę</h1>
-    <form th:action="@{/events/save}" th:object="${team}" method="post">
+    <form th:action="@{/teams/save}" th:object="${team}" method="post">
         <label>Nazwa drużyny:</label>
-        <input type="text" th:field="*{name}" placeholder="np. Real Madryt" required />
+        <input type="text" th:field="*{name}" placeholder="np. Al Shaba" required />
+        
+        <br>
+        <label> Pełna nazwa drużyny: </label>
+        <input type="text" th:field="*{officialName}" placeholder="np. Al Shabab FC" required />
+
+        <br>
+        <label> slug </label>
+        <input type="text" th:field="*{slug}" placeholder="np. al-shabab-fc" required />
+        
         
         <br>
         <label>Skrót (Abbreviation):</label>
-        <input type="text" th:field="*{abbreviation}" placeholder="np. RMA" />
+        <input type="text" th:field="*{abbreviation}" placeholder="np. SHA" required/>
+        
+        <br>
+        <label>TeamCountryCode:</label>
+        <input type="text" th:field="*{teamCountryCode}" placeholder="np. KSA" required/>
+        
+         <br>
+        <label>stagePosition:</label>
+        <input type="text" th:field="*{stagePosition}" placeholder="np. 4" />
+        
+        
+         <br>
+        <label>team_information:</label>
+        <input type="text" th:field="*{team_information}" />
+        
         
         <br>
         <button type="submit">Zapisz drużynę</button>

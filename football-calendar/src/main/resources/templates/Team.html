@@ -15,13 +15,13 @@
         </thead>
         <tbody>
             <tr th:each="t : ${team}">
-                <td th:text="${t.id}">1</td>
-                <td th:text="${t.name}">Nazwa</td>
-                <td th:text="${t.abbreviation}">ABC</td>
+                <td th:text="${t.id}"></td>
+                <td th:text="${t.name}"></td>
+                <td th:text="${t.abbreviation}"></td>
             </tr>
         </tbody>
     </table>
     <br>
-    <a href="/events/add">Dodaj nową drużynę</a>
+    <a href="/teams/add">Dodaj nową drużynę</a>
 </body>
 </html>
