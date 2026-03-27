@@ -1,20 +1,11 @@
 /*
-go
+
 CREATE LOGIN sportradar_user WITH PASSWORD = 'TwojeHaslo123!';
-go
 create database sportradar
-go
 use sportradar
-go
 CREATE USER sportradar_user FOR LOGIN sportradar_user;
-go
 ALTER ROLE db_owner ADD MEMBER sportradar_user;
-go
 */
-
-
-
-
 CREATE TABLE Teams (
     id INT PRIMARY KEY IDENTITY(1,1),
     [name] NVARCHAR(100) NOT NULL,

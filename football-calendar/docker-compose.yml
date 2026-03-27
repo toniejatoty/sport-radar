@@ -1,0 +1,23 @@
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: football-db
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=TwojeHaslo123!
+      - MSSQL_PID=Developer
+    ports:
+      - "1433:1433"
+
+  app:
+    build: .
+    container_name: football-app
+    ports:
+      - "8080:8080"
+    restart: on-failure
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:sqlserver://db:1433;databaseName=master;encrypt=false;trustServerCertificate=true
+      - SPRING_DATASOURCE_USERNAME=sa
+      - SPRING_DATASOURCE_PASSWORD=TwojeHaslo123!
+    depends_on:
+      - db
