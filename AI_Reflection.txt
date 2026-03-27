@@ -1,0 +1,26 @@
+AI Reflection - [Konrad Wołkiewicz]
+Project: Football Calendar Application
+
+1. Tools Used
+- Gemini (browser version): Primary assistant for implementation and logic.
+- GitHub Copilot: Used mainly for bulk translation (Polish to English) and README.
+
+2. How AI was integrated into the process
+My approach was conceptual-first. I usually knew the architectural patterns and logic required for the task, but I used AI to speed up the writing of specific syntax and boilerplate code. 
+
+Key strategies:
+- Incremental Prompting: I did not provide the entire challenge to the AI. Instead, I broke the task down into small, manageable steps (e.g., "create a specific repository mapping" or "fix a database connection issue") and prompted for one thing at a time.
+- Errors: I copied errors if they appeared and asked to explain.
+- Manual Pattern Replication: Once a working pattern was established (for example, a Controller or a Repository), I manually duplicated and adapted it for other entities to ensure consistency and full understanding of the code.
+
+3. Understanding and Verification
+I followed a strict rule: if I didn't understand a piece of code suggested by the AI, I didn't use it.
+- If a snippet was unclear, I asked the LLM for a detailed explanation of how it works.
+- If I still wasn't sure about the logic or if it felt over-engineered, I discarded it and looked for a simpler solution or wrote it manually.
+- I used AI to debug specific error messages (like database connection issues in Docker)
+
+4. Transparency and Decisions
+The majority of the README.md was drafted with the help of an LLM to ensure professional documentation standards. GitHub Copilot significantly accelerated the refactoring process when converting Polish variable descriptions or logs into English.
+
+Conclusion:
+AI served as a high-speed "syntax-manual" and a rubber-ducking partner. While it provided the building blocks, the architectural decisions and the final integration of all components (especially the Dockerized environment) were guided by my own understanding of the project requirements.
