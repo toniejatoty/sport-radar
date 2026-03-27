@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Match Details</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+    </head>
+    <body>
+
+
+        <span th:text="${event.homeTeam != null ? event.homeTeam.name : 'Unknown'}">Home</span>
+        <strong> vs </strong>
+        <span th:text="${event.awayTeam != null ? event.awayTeam.name : 'Unknown'}">Away</span>
+        <br>
+        <span>Match ID:</span>
+        <span th:text="${event.id}"></span>
+        <br>
+        <span>Stage:</span>
+        <span th:text="${event.stage != null ? event.stage.name : 'N/A'}"></span>
+        <br>
+        <span >Score:</span>
+        <span th:if="${event.result != null}" 
+              th:text="${event.result.homeGoals + ' : ' + event.result.awayGoals}"
+              ></span>
+        <span th:unless="${event.result != null}">No result yet</span>
+        <br>
+        <h3>Venue & Info</h3>
+
+        <span>Stadium:</span>
+        <span th:text="${event.event_metadate?.stadium ?: 'Unknown Stadium'}"></span>
+        <br>
+        <span >Date & Time (UTC):</span>
+        <span>
+            <span th:text="${event.event_metadate?.dateVenue ?:'Unknown Date'}"></span> 
+            ,
+            <span th:text="${event.event_metadate?.timeVenueUTC ?:'Unknown time'}"></span>
+        </span>
+        <br>
+        <span >Status:</span>
+        <span th:text="${event.event_metadate?.status ?: 'Unknown status'}"></span>
+        <br>
+        <span >Description:</span>
+        <span th:text="${event.event_metadate?.event_descritpion ?: 'unknown description'}"></span>
+        <br>
+        <span >Details:</span>
+        <span th:text="${event.event_metadate?.venue_datails ?: 'Unknown details'}"></span>
+        <br>
+
+        <a href="/events" >← Back to Calendar</a>
+
+    </body>
+</html>

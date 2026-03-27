@@ -13,7 +13,7 @@
             <a href="/teams" >Team List</a>
             <a href="/groups">View groups</a>
             <a href="/stage">Show Stages</a>
-                        <a href="/results">Show results</a>
+            <a href="/results">Show results</a>
             <a href="/events/add">Add Event</a>
         </div>
 
@@ -29,26 +29,28 @@
             </thead>
             <tbody>
                 <tr th:each="event : ${matches}">
-                    <td th:text="${event.id}"></td>
+                    <td><a th:href="@{/events/{id}(id=${event.id})}"
+                           th:text="${event.id}"
+                </td>
 
-                    <td>
-                        <span class="team-name" th:text="${event.homeTeam != null ? event.homeTeam.name : 'NONE'}"></span>
-                        <span class="vs">vs</span>
-                        <span class="team-name" th:text="${event.awayTeam != null ? event.awayTeam.name : 'NONE'}"></span>
-                    </td>
+                <td>
+                    <span class="team-name" th:text="${event.homeTeam != null ? event.homeTeam.name : 'NONE'}"></span>
+                    <span class="vs">vs</span>
+                    <span class="team-name" th:text="${event.awayTeam != null ? event.awayTeam.name : 'NONE'}"></span>
+                </td>
 
-                    <td th:text="${event.stage != null ? event.stage.name : '-'}"></td>
+                <td th:text="${event.stage != null ? event.stage.name : '-'}"></td>
 
-                    <td th:text="${event.group != null ? event.group.name : '-'}"></td>
+                <td th:text="${event.group != null ? event.group.name : '-'}"></td>
 
-                    <td class="score">
-                        <span th:if="${event.result != null}" 
-                              th:text="${event.result.homeGoals + ' : ' + event.result.awayGoals}"></span>
-                        <span th:unless="${event.result != null}">Upcoming</span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                <td class="score">
+                    <span th:if="${event.result != null}" 
+                          th:text="${event.result.homeGoals + ' : ' + event.result.awayGoals}"></span>
+                    <span th:unless="${event.result != null}">Upcoming</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-    </body>
+</body>
 </html>
