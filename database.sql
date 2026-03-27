@@ -110,8 +110,45 @@ CREATE TABLE Events (
 
 );
 
+-- Dru¿yny
+INSERT INTO Teams (name, officialName, slug, abbreviation, teamCountryCode, stagePosition, team_information)
+VALUES 
+('Real Madrid', 'Real Madrid Club de Fútbol', 'real-madrid', 'RMA', 'ESP', 1, 'Klub z Madrytu'),
+('FC Barcelona', 'Futbol Club Barcelona', 'fc-barcelona', 'BAR', 'ESP', 2, 'Duma Katalonii'),
+('Man City', 'Manchester City Football Club', 'man-city', 'MCI', 'GBR', 1, 'Mistrz Anglii'),
+('Bayern', 'FC Bayern München', 'bayern-munich', 'BAY', 'DEU', 1, 'Gigant z Bawarii');
 
+-- Grupy
+INSERT INTO [group] ([name]) VALUES ('Group A'), ('Group B');
 
+-- Etapy (Stage)
+INSERT INTO stage (id, [name], ordering)
+VALUES 
+('group_stage', 'Group Stage', 1),
+('quarter_final', 'Quarter Final', 2),
+('semi_final', 'Semi Final', 3),
+('final', 'Final', 4);
+-- Wynik meczu (Real vs Barca - Real wygra³ 2:1)
+INSERT INTO result (homeGoals, awayGoals, _winnerId, [message])
+VALUES (2, 1, 1, 'Zaciête El Clásico');
+
+-- Metadane meczu (Stadion, Data, Czas)
+INSERT INTO event_metadate (season, [status], timeVenueUTC, dateVenue, stadium, [group], originCompetitionId, originCompetitionName, event_descritpion, venue_datails)
+VALUES (2024, 'closed', '20:00:00', '2026-03-27', 'Santiago Bernabéu', 1, 'ucl', 'Champions League', 'Wielki mecz towarzyski', 'Dach zamkniêty');
+
+-- Bramki (Dla wyniku o ID 1)
+INSERT INTO goals (_result_id, minute_scored, player_name)
+VALUES 
+(1, 12, 'Vinícius Júnior'),
+(1, 45, 'Robert Lewandowski'),
+(1, 88, 'Jude Bellingham');
+
+-- Kartki (Dla wyniku o ID 1)
+INSERT INTO yellowCards (_result_id, [minute], player_name) VALUES (1, 30, 'Gavi');
+INSERT INTO directRedCards (_result_id, [minute], player_name) VALUES (1, 90, 'Ronald Araújo');
+-- Dodajemy mecz: Real Madryt (ID 1) vs FC Barcelona (ID 2)
+INSERT INTO Events (_event_metadate_id, _homeTeam_id, _awayTeam_id, _result_id, _stage_id, _group_id)
+VALUES (1, 1, 2, 1, 'group_stage', 1);
 /*
 go
 drop table events
