@@ -19,33 +19,6 @@ docker-compose up --build
 Done! 🎉 Access the application at **http://localhost:8080**
 
 ---
-
-## Table of Contents
-- [Sport Radar - Football Calendar Application](#sport-radar---football-calendar-application)
-  - [Quick Start (⭐ Recommended)](#quick-start--recommended)
-    - [Prerequisites](#prerequisites)
-    - [Run with Docker](#run-with-docker)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Technology Stack](#technology-stack)
-  - [Features](#features)
-  - [Docker Setup](#docker-setup)
-    - [Environment \& URLs](#environment--urls)
-    - [Commands](#commands)
-  - [API Endpoints](#api-endpoints)
-    - [Match Calendar](#match-calendar)
-    - [Teams](#teams)
-    - [Groups](#groups)
-    - [Stages](#stages)
-    - [Results](#results)
-  - [Assumptions and Design Decisions](#assumptions-and-design-decisions)
-    - [1. **Database Design**](#1-database-design)
-    - [2. **Docker Architecture**](#2-docker-architecture)
-    - [3. **UI/UX Decisions**](#3-uiux-decisions)
-    - [4. **Tournament Model**](#4-tournament-model)
-  - [Database Schema](#database-schema)
-  - [License](#license)
-
 ## Overview
 
 The Sport Radar Football Calendar application is designed to manage international football tournaments. It allows administrators to:
