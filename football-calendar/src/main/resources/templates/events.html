@@ -8,15 +8,20 @@
     <body>
 
         <h1>Competition Calendar</h1>
+<nav class="navbar">
+    <div class="nav-container">
+        <a th:href="@{/events}" class="nav-logo">SportRadar App</a>
+        <ul class="nav-links">
+            <li><a th:href="@{/events}">Home</a></li>
+            <li><a th:href="@{/events/add}">Add Event</a></li>
 
-        <div class="nav">
-            <a href="/teams" >Team List</a>
-            <a href="/groups">View groups</a>
-            <a href="/stage">Show Stages</a>
-            <a href="/results">Show results</a>
-            <a href="/events/add">Add Event</a>
-        </div>
-
+            <li><a href="#">Team List</a></li>
+            <li><a href="#">View groups</a></li>
+            <li><a href="#">Show Stages</a></li>
+            <li><a href="#">Show results</a></li>
+        </ul>
+    </div>
+</nav>
         <table>
             <thead>
                 <tr>
