@@ -1,11 +1,12 @@
 package com.sportradar.football_calendar.model;
+
 import jakarta.persistence.*;
 
-@Entity 
-@Table(name = "Teams") 
+@Entity
+@Table(name = "Teams")
 public class Teams {
 
-    @Id 
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
@@ -15,8 +16,7 @@ public class Teams {
     private String abbreviation;
     private String teamCountryCode;
     private Integer stagePosition;
-    private String team_information; 
-
+    private String team_information;
 
     public void setId(Integer id) {
         this.id = id;
@@ -81,7 +81,5 @@ public class Teams {
     public String getTeam_information() {
         return team_information;
     }
-
-
 
 }

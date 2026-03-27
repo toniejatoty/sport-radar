@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SecondYellowCardsRepository extends JpaRepository<SecondYellowCards, Integer> {
- 
+
 }

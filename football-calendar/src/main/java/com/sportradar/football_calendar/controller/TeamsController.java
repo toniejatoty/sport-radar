@@ -1,4 +1,5 @@
 package com.sportradar.football_calendar.controller;
+
 import com.sportradar.football_calendar.model.Teams;
 import com.sportradar.football_calendar.repository.TeamsRepository;
 import org.springframework.stereotype.Controller;
@@ -11,26 +12,27 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class TeamsController {
 
     private final TeamsRepository teamsRepository;
-    public TeamsController( TeamsRepository teamsRepository) {
+
+    public TeamsController(TeamsRepository teamsRepository) {
         this.teamsRepository = teamsRepository;
     }
 
-    @GetMapping("/teams") 
+    @GetMapping("/teams")
     public String listTeams(Model model) {
         model.addAttribute("team", teamsRepository.findAll());
-        return "Team"; 
+        return "Team";
     }
-    
+
     @GetMapping("/teams/add")
     public String showAddForm(Model model) {
-    model.addAttribute("team", new Teams()); 
-    return "add-teams"; 
-}
-    @PostMapping("/teams/save")
-    public String saveTeam (@ModelAttribute("team") Teams team) {
-    teamsRepository.save(team); 
-    return "redirect:/teams"; 
-}
+        model.addAttribute("team", new Teams());
+        return "add-teams";
+    }
 
+    @PostMapping("/teams/save")
+    public String saveTeam(@ModelAttribute("team") Teams team) {
+        teamsRepository.save(team);
+        return "redirect:/teams";
+    }
 
 }

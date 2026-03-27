@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Add Group</title>
-</head>
-<body>
-    <h1>Add New Group</h1>
-    <form th:action="@{/groups/save}" th:object="${group}" method="post">
-        <label>Group name:</label>
-        <input type="text" th:field="*{name}" placeholder="Group A" required />
-        
+    <head>
+        <title>Add Group</title>
+    </head>
+    <body>
+        <h1>Add New Group</h1>
+        <form th:action="@{/groups/save}" th:object="${group}" method="post">
+            <label>Group name:</label>
+            <input type="text" th:field="*{name}" placeholder="Group A" required />
+
+            <br>
+
+            <br>
+            <button type="submit">Save Group</button>
+        </form>
         <br>
-        
-        <br>
-        <button type="submit">Save Group</button>
-    </form>
-    <br>
-    <a href="/groups">Back to list</a>
-</body>
+        <a href="/groups">Back to list</a>
+    </body>
 </html>

@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface Event_metadataRepository extends JpaRepository<Event_metadata, Integer> {
- 
+
 }

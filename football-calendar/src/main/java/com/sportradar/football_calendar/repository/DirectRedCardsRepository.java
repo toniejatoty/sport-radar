@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DirectRedCardsRepository extends JpaRepository<DirectRedCards, Integer> {
- 
+
 }

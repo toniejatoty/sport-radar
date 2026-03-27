@@ -1,11 +1,12 @@
 package com.sportradar.football_calendar.model;
+
 import jakarta.persistence.*;
 
-@Entity 
-@Table(name = "stage") 
+@Entity
+@Table(name = "stage")
 public class Stage {
 
-    @Id 
+    @Id
     private String id;
     private String name;
     private Integer ordering;
@@ -33,5 +34,5 @@ public class Stage {
     public void setOrdering(Integer ordering) {
         this.ordering = ordering;
     }
-    
-            }
+
+}

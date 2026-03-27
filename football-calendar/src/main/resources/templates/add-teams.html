@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Add Team</title>
-</head>
-<body>
-    <h1>Add New Team</h1>
-    <form th:action="@{/teams/save}" th:object="${team}" method="post">
-        <label>Team name:</label>
-        <input type="text" th:field="*{name}" placeholder="e.g. Al Shaba" required />
-        
-        <br>
-        <label> Official team name: </label>
-        <input type="text" th:field="*{officialName}" placeholder="e.g. Al Shabab FC" required />
+    <head>
+        <title>Add Team</title>
+    </head>
+    <body>
+        <h1>Add New Team</h1>
+        <form th:action="@{/teams/save}" th:object="${team}" method="post">
+            <label>Team name:</label>
+            <input type="text" th:field="*{name}" placeholder="e.g. Al Shaba" required />
 
+            <br>
+            <label> Official team name: </label>
+            <input type="text" th:field="*{officialName}" placeholder="e.g. Al Shabab FC" required />
+
+            <br>
+            <label> slug </label>
+            <input type="text" th:field="*{slug}" placeholder="e.g. al-shabab-fc" required />
+
+
+            <br>
+            <label>Abbreviation:</label>
+            <input type="text" th:field="*{abbreviation}" placeholder="e.g. SHA" required/>
+
+            <br>
+            <label>TeamCountryCode:</label>
+            <input type="text" th:field="*{teamCountryCode}" placeholder="e.g. KSA" required/>
+
+            <br>
+            <label>stagePosition:</label>
+            <input type="text" th:field="*{stagePosition}" placeholder="e.g. 4" />
+
+
+            <br>
+            <label>team_information:</label>
+            <input type="text" th:field="*{team_information}" />
+
+
+            <br>
+            <button type="submit">Save team</button>
+        </form>
         <br>
-        <label> slug </label>
-        <input type="text" th:field="*{slug}" placeholder="e.g. al-shabab-fc" required />
-        
-        
-        <br>
-        <label>Abbreviation:</label>
-        <input type="text" th:field="*{abbreviation}" placeholder="e.g. SHA" required/>
-        
-        <br>
-        <label>TeamCountryCode:</label>
-        <input type="text" th:field="*{teamCountryCode}" placeholder="e.g. KSA" required/>
-        
-         <br>
-        <label>stagePosition:</label>
-        <input type="text" th:field="*{stagePosition}" placeholder="e.g. 4" />
-        
-        
-         <br>
-        <label>team_information:</label>
-        <input type="text" th:field="*{team_information}" />
-        
-        
-        <br>
-        <button type="submit">Save team</button>
-    </form>
-    <br>
-    <a href="/teams">Back to list</a>
-</body>
+        <a href="/teams">Back to list</a>
+    </body>
 </html>

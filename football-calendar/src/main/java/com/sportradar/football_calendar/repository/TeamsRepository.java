@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TeamsRepository extends JpaRepository<Teams, Integer> {
- 
+
 }

@@ -1,12 +1,13 @@
 package com.sportradar.football_calendar.model;
+
 import jakarta.persistence.*;
 
-@Entity 
-@Table(name = "[group]") 
+@Entity
+@Table(name = "[group]")
 public class Group {
 
-    @Id 
-    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
 
@@ -25,5 +26,5 @@ public class Group {
     public void setName(String name) {
         this.name = name;
     }
-    
-            }
+
+}

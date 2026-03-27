@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class EventsController {
-    
+
     private final EventsRepository eventRepository;
     private final TeamsRepository teamsRepository;
     private final GroupRepository groupRepository;
@@ -33,15 +33,15 @@ public class EventsController {
         this.stageRepository = stageRepository;
         this.resultRepository = resultRepository;
     }
-    
-    @GetMapping("/events")    
+
+    @GetMapping("/events")
     public String listEvents(Model model) {
-        
+
         model.addAttribute("matches", eventRepository.findAllEfficiently());
-        
-        return "events";        
+
+        return "events";
     }
-    
+
     @GetMapping("/events/add")
     public String showAddForm(Model model) {
         Events event = new Events();
@@ -51,15 +51,15 @@ public class EventsController {
         model.addAttribute("results", resultRepository.findAll());
         model.addAttribute("stages", stageRepository.findAll());
         model.addAttribute("groups", groupRepository.findAll());
-        return "add-event";        
+        return "add-event";
     }
 
     @PostMapping("/events/save")
     public String saveEvent(@ModelAttribute("event") Events event) {
-        eventRepository.save(event);        
-        return "redirect:/events";        
+        eventRepository.save(event);
+        return "redirect:/events";
     }
-    
+
     @GetMapping("/events/{id}")
     public String getEventDetails(@PathVariable Integer id, Model model) {
         Events event = eventRepository.findByIdEfficiently(id);
@@ -69,5 +69,5 @@ public class EventsController {
         }
         return "redirect:/events";
     }
-    
+
 }

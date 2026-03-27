@@ -8,12 +8,11 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ResultRepository extends JpaRepository<Result, Integer> {
-@Query 
-(
-"Select r from Result r"
-        + " left join fetch r.winner"
-        
-)
-List <Result> findAllResults();
-    
+
+    @Query(
+            "Select r from Result r"
+            + " left join fetch r.winner"
+    )
+    List<Result> findAllResults();
+
 }
