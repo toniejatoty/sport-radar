@@ -16,7 +16,7 @@ cd sport-radar/football-calendar
 docker-compose up --build
 ```
 
-Done! 🎉 Access the application at **http://localhost:8080**
+Done! 🎉 Access the application at **http://localhost:8080/events**
 
 ---
 ## Overview
