@@ -41,6 +41,34 @@
                 <option th:each="r : ${results}" th:value="${r.id}" th:text="${r.homeGoals + ':' + r.awayGoals}"></option>
             </select>
             <br>
+            <label> Stadium Name:</label>
+            <input type="text" th:field ="*{event_metadate.stadium}"/>
+            <br>
+            <label> Season(Year):</label>
+            <input type="text" th:field ="*{event_metadate.season}"/>
+            <br>
+
+            <label> Status:</label>
+            <select th:field ="*{event_metadate.status}">
+                <option value ="not started "> Not started</option>
+                <option value="live"> live</option>
+                <option value = "closed">closed</option>
+            </select>
+           <br>
+            <label> Match Date:</label>
+            <input type="date" th:field ="*{event_metadate.dateVenue}"/>
+     
+            <br>
+            <label> Match time:</label>
+            <input type="time" th:field ="*{event_metadate.timeVenueUTC}"/>
+            
+           <br>
+           
+            <label> Description:</label>
+            <input type="text" th:field ="*{event_metadate.event_descritpion}"/>
+            <br>
+
+
             <button type="submit">Save match</button>
             <a href="/events">Cancel</a>
         </form>

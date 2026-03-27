@@ -9,7 +9,7 @@ public class Events {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "_event_metadate_id")
     private Event_metadata _event_metadate;
     @ManyToOne
